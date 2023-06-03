@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap-glyphicons.css"> -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <title>Login</title>
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="images/main_bg.jpg" /> -->
+  <!-- <span class="glyphicon glyphicon-log-in"></span>   -->
+  <script language="javascript" hidden>
+
+    function showPage(evt, pageName) {
+      var i, tabcontent, tablinks;
+
+      tabcontent = document.getElementsByClassName("tabcontent");
+
+      for ( i = 0; i < tabcontent.length; i++ )
+        tabcontent[i].style.display = "none";
+
+      tablinks = document.getElementsByClassName("tablinks");
+
+      for ( i = 0; i < tablinks.length; i++ )
+        tablinks[i].className = tablinks[i].className.replace("active", "");
+
+      document.getElementById(pageName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    function setDefaultTab() {
+      document.getElementById("default").click();
+    }
+    $(document).ready(function() {
+      $('[data-toggle="tooltip"]').tooltip();
+
+    });
+  </script>
+</head>
+<body onload="setDefaultTab()" class="parallax">
+  <div class="jumbotron header text-center d-none">
+    <div class="text-center" style="font-family: Sindhubairavi; font-size: x-large;">
+      <div class="line-1 anim-typewriter">fw;f frlw.</div>
+    </div>
+    <h1 class="display-4">This is Header.</h1>
+    <p>This is Sub-Header.</p>
+  </div>
+  <nav class="navbar navbar-dark text-light bg-blue white sticky-top" role="navigation">
+    <div class="container-fluid">
+        <button type="button" class="navbar-toggler " data-toggle="collapse"
+        data-target="#myNavbar">
+       <i class="fa fa-bars"></i></span>
+      </button>
+      <div class="navbar-header">
+        <a class="navbar-brand white d-none d-md-block" href="#">Menu</a>  
+      </div>
+      
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav white text-light">
+          <span class="line-br-white"></span>
+          <li class="nav-item menu"><a href="#" class="white nav-link menu">Apply Scholarship</a></li>
+          <span class="line-br-white"></span>
+          <li class="nav-item menu"><a href="#" class="white nav-link menu">Review Scholarship - (Staffs only)</a></li>
+          <span class="line-br-white"></span>
+        </ul>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="about.php" class="white nav-link" style="text-decoration: none;"><i class="fa fa-info-circle"></i>About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="tab">
+    <div class="row">
+      <div class="col">
+        <button class="tablinks water-drop" id="default" onclick="showPage(event, 'student')">Student</button>
+      </div>
+      <div class="col">
+        <button class="tablinks water-drop" onclick="showPage(event, 'staff')">Staff</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container tabcontent bottom-drop" id="student">
+    <div class="form-title text-center">
+      <p>Login</p>
+    </div>
+    <div class="form-container slide-from-left">
+      <form method="POST" action="login_auth_stud.php" aria->
+        <input type="hidden" name="form_name" value="stud_login" />
+          <div class="form-group">
+            
+            <input type="text" name="username" class="form-control form-control-main" required aria-describedby="usernameHelp">
+            <label for="username" class="form-control-main-placeholder">Username</label>
+            <small id="usernameHelp" class="form-text text-muted">Please use your username provided by the Admin.</small>
+          </div>
+          <div class="form-group">
+            <input type="password" name="passwd" class="form-control form-control-main" required>
+            <label for="password" class="form-control-main-placeholder">Password</label>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn-submit water-drop" data-toggle="tooltip" data-placement="top" title="Login as student!"><span class="glyphicon glyphicon-log-in"></span>Login</button>
+          </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container tabcontent bottom-drop" id="staff">
+    <div class="form-title text-center">
+      <p>Login - Staff</p>
+    </div>
+    <div class="form-container slide-from-right">
+      <form method="POST" action="login_auth_staff.php">
+          <div class="form-group">
+            <input type="text" name="username" class="form-control form-control-main" required aria-describedby="usernameHelp">
+            <label for="username" class="form-control-main-placeholder"><spanphi class="text-small gly"></span>Username</label>
+            <small id="usernameHelp" class="form-text text-muted">Please use your username provided by the Admin.</small>
+          </div>
+          <div class="form-group">
+            <input type="password" name="passwd" class="form-control form-control-main" required>
+            <label for="password" class="form-control-main-placeholder">Password</label>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn-submit water-drop" data-toggle="tooltip" data-placement="top" title="Login as staff!"><span class="glyphicon glyphicon-log-in"></span>Login</button>
+          </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="nav-container">
+    <span class="dot blue-bg delay-f"></span>
+    <span class="dot red-bg delay-s"></span>
+    <span class="dot green-bg delay-t"></span>
+  </div>
+
+  <div class="footer white">
+    <div class="row">
+      <div class="col-sm white">
+        <p><a href="index.php" data-toggle="tooltip" data-placement="top" title="Go to Home!"><i class="fa fa-home"></i>Home</a></p>
+        <p><a href="about.php"><i class="fa fa-info-circle"></i>About</a></p>
+        <p><a href="contact.php"><i class="fa fa-phone"></i>Contact Us</a></p>
+      </div>
+      <div class="col-sm white">
+        <p><a href="#">Terms and Conditions</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+    <p class="text-center">Copyright<i class="fa fa-copyright"></i><script>document.write(new Date().getFullYear())</script> - EpicSoftwares.<br>An Unauthorized and Unofficial Software Development team.</p>
+    <p class="text-center">- A Beloved work with <span class="team-name">passion</span><i class="fa fa-heart"></i></span></p>
+  </div>
+</body>
+</html>

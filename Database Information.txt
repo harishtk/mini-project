@@ -1,0 +1,12 @@
+MySQL Export: 
+	- open cmd
+	- navigate to mysql 'bin' folder
+	- type 'mysqldump -u root -p db_name > schema.sql'
+
+MySQL Import: 
+	- open cmd
+	- navigate to mysql 'bin' folder
+	- type 'mysql -u root -p db_name < schema.sql' 
+	Note -- The database should exist. The above statement doesn't create a db.
+
+The schema for 'scholarship' db will be found under /bkup/schema.sql

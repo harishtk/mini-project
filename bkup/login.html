@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <title>Login</title>
+  <script language="javascript">
+
+    function showPage(evt, pageName) {
+      var i, tabcontent, tablinks;
+
+      tabcontent = document.getElementsByClassName("tabcontent");
+
+      for ( i = 0; i < tabcontent.length; i++ )
+        tabcontent[i].style.display = "none";
+
+      tablinks = document.getElementsByClassName("tablinks");
+
+      for ( i = 0; i < tablinks.length; i++ )
+        tablinks[i].className = tablinks[i].className.replace("active", "");
+
+      document.getElementById(pageName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    function setDefaultTab() {
+      document.getElementById("default").click();
+    }
+    $(document).ready(function() {
+      $('[data-toggle="tooltip"]').tooltip();
+    });
+  </script>
+</head>
+<body style="font-family: verdana;" onload="setDefaultTab()" class="parallax">
+  <div class="jumbotron header text-center d-none">
+    <h1>This is Header.</h1>
+    <p>This is Sub-Header.</p>
+  </div>
+  <nav class="navbar bg-blue navbar-dark" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggler" data-toggle="collapse"
+        data-target="#myNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <p class="navbar-brand white">Menu</p>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav white">
+          <span class="line-br-white"></span>
+          <li class="nav-item"><a href="#" class="white nav-link">Apply Scholarship</a></li>
+          <span class="line-br-white"></span>
+          <li class="nav-item"><a href="#" class="white nav-link">Review Scholarship - (Staffs only)</a></li>
+          <span class="line-br-white"></span>
+        </ul>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="about.html" class="white nav-link" style="text-decoration: none;">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="tab">
+    <div class="row">
+      <div class="col">
+        <button class="tablinks water-drop" id="default" onclick="showPage(event, 'student')">Student</button>
+      </div>
+      <div class="col">
+        <button class="tablinks water-drop" onclick="showPage(event, 'staff')">Staff</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container tabcontent bottom-drop" id="student">
+    <div class="form-title text-center">
+      <p>Login</p>
+    </div>
+    <div class="form-container slide-from-left">
+      <form method="POST" action="login_auth_stud.php" aria->
+        <input type="hidden" name="form_name" value="stud_login" />
+          <div class="form-group">
+            <input type="text" name="username" class="form-control" required aria-describedby="usernameHelp">
+            <label for="username" class="form-control-placeholder">Username</label>
+            <small id="usernameHelp" class="form-text text-muted">Please use your username provided by the Admin.</small>
+          </div>
+          <div class="form-group">
+            <input type="password" name="passwd" class="form-control" required>
+            <label for="password" class="form-control-placeholder">Password</label>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn-submit water-drop" data-toggle="tooltip" data-placement="top" title="Login as student!">Login</button>
+          </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container tabcontent bottom-drop" id="staff">
+    <div class="form-title text-center">
+      <p>Staff Login</p>
+    </div>
+    <div class="form-container slide-from-right">
+      <form method="POST" action="login_auth_staff.php">
+          <div class="form-group">
+            <input type="text" name="username" class="form-control" required aria-describedby="usernameHelp">
+            <label for="username" class="form-control-placeholder">Username</label>
+            <small id="usernameHelp" class="form-text text-muted">Please use your username provided by the Admin.</small>
+          </div>
+          <div class="form-group">
+            <input type="password" name="passwd" class="form-control" required>
+            <label for="password" class="form-control-placeholder">Password</label>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn-submit water-drop" data-toggle="tooltip" data-placement="top" title="Login as staff!">Login</button>
+          </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="nav-container">
+    <span class="dot blue-bg delay-f"></span>
+    <span class="dot red-bg delay-s"></span>
+    <span class="dot green-bg delay-t"></span>
+  </div>
+
+  <div class="footer white">
+    <div class="row">
+      <div class="col-sm white">
+        <p><a href="index.php" data-toggle="tooltip" data-placement="top" title="Go to Home!">Home</a></p>
+        <p><a href="about.html">About</a></p>
+        <p><a href="contact.html">Contact Us</a></p>
+      </div>
+      <div class="col-sm white">
+        <p><a href="#">Terms and Conditions</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+    <p class="text-center">Copyright &copy <script>document.write(new Date().getFullYear())</script> - EpicSoftwares.<br>An Unauthorized and Unofficial Software Development team.</p>
+    <p class="text-center">- A Beloved work with <span class="team-name">passion.</span></p>
+  </div>
+
+</body>
+</html>

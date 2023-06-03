@@ -1,0 +1,184 @@
+<?php
+	include('session.php');
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Welcome</title>
+</head>
+<body style="font-family: verdana;" class="parallax">
+	<div class="jumbotron header text-center d-none">
+    	<h1>This is Header.</h1>
+    	<p>This is Sub-Header.</p>
+  	</div>	
+  	<nav class="navbar bg-blue navbar-dark" role="navigation">
+    	<div class="container-fluid">
+	      	<div class="navbar-header">
+    	    	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+        		<span class="navbar-toggler-icon white"></span>
+      			</button>
+      			<p class="navbar-brand white">Menu</p>
+      		</div>
+      	<div class="collapse navbar-collapse" id="myNavbar">
+        	<ul class="nav navbar-nav white">
+          	<span class="line-br-white"></span>
+          		<li class="nav-item menu"><a href="#" class="white nav-link menu">Apply Scholarship</a></li>
+          		<span class="line-br-white"></span>
+	          <li class="nav-item menu"><a href="#" class="white nav-link menu">Review Scholarship - (Staffs only)</a></li>
+    	      <span class="line-br-white-"></span>
+        	</ul>
+      	</div>
+      	<ul class="nav navbar-nav navbar-right">
+        	  <li><a href="logout.php" class="white nav-link" style="text-decoration: none;">
+        	  	<span class="glyphicon glyphicon-log-out white">Logout</span>
+        	  </a></li>
+      	</ul>
+    	</div>
+  	</nav>
+    
+    <div class="container emp-profile">
+
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img">
+                            <img src="user.png"  alt="Profile Image"/>
+                            
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="profile-head text-center">
+                                   
+                                  <h5>
+                                        NAVINKUMAR.S
+                                    </h5>
+                                    <h6 class="text-muted">
+                                        Web Developer and Designer
+                                    </h6></p>
+                                   
+                                   
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link profile active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link profile" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-work text-center" >
+                       <p><h5>
+                                        NAVINKUMAR.s
+                                    </h5>
+                                    <h6 class="text-muted">
+                                        Web Developer and Designer
+                                    </h6></p>
+                       </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>User Name:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>NAVINKUMAR S</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>iamnk@gmail.com</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>6379674259</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Profession</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Web Developer and Designer</p>
+                                            </div>
+                                        </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Experience:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Expert</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Total Projects:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>2</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>English Level:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Expert</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Availability:</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>2019</p>
+                                            </div>
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>           
+        </div>
+
+ 
+
+  	<div class="footer white">
+    <div class="row">
+      <div class="col-sm white">
+        <p><a href="#">Home</a></p>
+        <p><a href="#">About</a></p>
+        <p><a href="#">Contact Us</a></p>
+      </div>
+      <div class="col-sm white">
+        <p><a href="#">Terms and Conditions</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+      </div>
+    </div>
+    <p class="text-center">Copyright &copy <script>document.write(new Date().getFullYear())</script> - EpicSoftwares.</p>
+  </div>
+</body>
+</html>
